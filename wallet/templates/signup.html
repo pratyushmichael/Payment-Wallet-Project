@@ -1,0 +1,18 @@
+<!-- signup.html -->
+
+<h2>Create an Account</h2>
+
+<!-- The form sends data to the same URL using POST -->
+<form method="POST">
+    {% csrf_token %}
+    
+    <!-- Display form fields automatically, each inside <p> -->
+    <!-- This is where username, password, confirm password fields appear -->
+    {{ form.as_p }}
+
+    <button type="submit">Sign Up</button>
+</form>
+
+<p>Already have an account?
+   <a href="{% url 'login' %}">Login here</a>
+</p>

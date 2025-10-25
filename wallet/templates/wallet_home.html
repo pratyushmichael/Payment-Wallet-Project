@@ -1,0 +1,43 @@
+<h2>Wallet Dashboard</h2>
+
+<!-- Show current balance -->
+<p><strong>Current Balance:</strong> ₹{{ wallet.balance }}</p>
+
+<p><a href="{% url 'add_money' %}">➕ Add Money</a></p>
+
+<!-- Button to go to Transfer Money page -->
+<p><a href="{% url 'transfer_money' %}">➡️ Transfer Money</a></p>
+
+<hr>
+
+<h3>Transaction History</h3>
+
+<!-- If user has no transactions -->
+{% if transactions.count == 0 %}
+<p>No transactions yet.</p>
+{% else %}
+<table border="1" cellpadding="6">
+    <tr>
+        <th>Type</th>
+        <th>Amount</th>
+        <th>Description</th>
+        <th>Time</th>
+    </tr>
+
+    <!-- Loop through each transaction -->
+    {% for t in transactions %}
+    <tr>
+        <!-- Credit in green, Debit in red -->
+        <td style="color: {% if t.transaction_type == 'credit' %}green{% else %}red{% endif %};">
+            {{ t.transaction_type }}
+        </td>
+        
+        <td>₹{{ t.amount }}</td>
+        <td>{{ t.description }}</td>
+        <td>{{ t.timestamp }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<!-- End the if-block -->
+{% endif %}

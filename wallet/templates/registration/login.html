@@ -1,0 +1,16 @@
+<!-- login.html -->
+
+<h2>Login</h2>
+
+<form method="POST">
+    {% csrf_token %}
+    
+    <!-- Display username & password fields -->
+    {{ form.as_p }}
+
+    <button type="submit">Login</button>
+</form>
+
+<p>Don't have an account?
+  <a href="{% url 'signup' %}">Create one</a>
+</p>

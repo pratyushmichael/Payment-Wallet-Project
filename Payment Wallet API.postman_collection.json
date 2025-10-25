@@ -1,0 +1,68 @@
+{
+	"info": {
+		"_postman_id": "c3bd4532-a908-4fe9-980f-b154f5dfb972",
+		"name": "Payment Wallet API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49546879",
+		"_collection_link": "https://strikerdon80-6258671.postman.co/workspace/pratyush-sinha's-Workspace~278fc8c4-d7d8-40c9-8b57-32f31c776bcb/collection/49546879-c3bd4532-a908-4fe9-980f-b154f5dfb972?action=share&source=collection_link&creator=49546879"
+	},
+	"item": [
+		{
+			"name": "Get Wallet Balance",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "sessionid=aapk5jegdrunk3z1qersc4g3g29tbqc5",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL}}/api/wallet/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"wallet",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Transaction History",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "sessionid=aapk5jegdrunk3z1qersc4g3g29tbqc5",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL}}/api/transactions/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"transactions",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
